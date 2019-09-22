@@ -1,0 +1,9 @@
+/* 
+    4.12.2 - Aceita a versao exata
+    ^4.12.2 - Aceita novas versoes menores 4.*.* 
+    ~4.12.2 - Aceita novos Patches 4.12.*
+    >4.12.2 - Aceita verções superiores a 4.12.2
+    >=...
+    <
+    <=
+    */

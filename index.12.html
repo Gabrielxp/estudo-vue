@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEU VUEJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body >
+
+    <div id="app" >
+
+        <div style="margin: 100px 150px" class="container">
+
+            <input type="button" @click="getUsers()" class="btn btn-success" value="Buscar" />
+
+            <ul>
+                <li v-for="user in users">
+                    {{user.name}}
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+
+    <script>
+
+
+    // Mixins são formas de criar componentes vue re-utilizaveis em qualquer  lugar
+
+        var mixin = {
+            methods:{
+                getUsers(){
+                   
+                //    Request com vue-resource
+                    this.$http.get('https://jsonplaceholder.typicode.com/users').then(response => {
+
+                        this.users = response.body;
+
+                    }, erro => {
+                        console.log(erro.body);
+                    }).finally(function(){
+
+                    });
+
+                }
+            }
+        }
+
+
+        var app = new Vue({
+            el: "#app",
+            // Para usar basta adicionar a variavel do mixin no atributo mixins que o Vue adiciona no componente a ser criado
+            mixins: [mixin],
+
+            data:{
+                titulo:"Gabriel",
+                users: [],
+                loader:{
+                    users: false
+                }
+            },
+            methods:{
+
+
+            }
+        });
+
+    </script>
+
+</body>
+</html>

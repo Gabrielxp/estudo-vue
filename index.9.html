@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEU VUEJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body >
+
+    <div id="app" >
+
+        <div style="margin: 100px 150px">
+
+            <formulario></formulario>
+            <listagem></listagem>
+
+        </div>
+
+    </div>
+
+    <template id="listagem">
+        <ul class="list-group">
+            <li v-for=" item in list" class="list-group-item">{{item.titulo}}</li>
+        </ul>
+    </template>
+
+    
+    <template id="formulario">
+
+        <div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Titulo</label>
+                <input v-model="titulo" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <button  style="margin-bottom:20px" @click="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        
+    </template>
+      
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        //var eventBus = new Vue();
+        //Usa essa parada para transportar dados de um componente para outro
+        Vue.prototype.$eventHub = new Vue();
+
+        Vue.component('formulario',{
+            template:"#formulario",
+            data:{
+                titulo: '',
+            },
+            methods:{
+                submit(){
+                    //Emito meus dados no eventHub
+                    this.$eventHub.$emit('dados', this.titulo);
+                }
+            }
+        });
+
+        Vue.component('listagem', {
+
+            template:"#listagem",
+    
+            created(){
+                var vm = this; //Referencio ao componente local
+                //Pegaos dados emitidos
+                this.$eventHub.$on('dados', function(nome){
+                    if(nome){
+                        vm.list.push({titulo: nome});
+                    }
+                });
+            },
+            data(){//Forma de criar dados em componentes, coloca eles numa função q retorna oq quiser
+                return {
+                    list:[
+                        {titulo: "Abracadabra"}
+                    ]
+                }
+            }
+        });
+
+        var app = new Vue({
+            el: "#app",
+            data:{
+                titulo:"Gabriel"
+            }
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEU VUEJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body >
+
+    <div id="app" :style="classeBody">
+
+        <!-- Usando Filtros -->
+        <div v-for="usuario in usuarios">
+            <div>{{usuario.nome | upper | truncate(5) }}</div>
+        </div>
+
+
+    </div>
+      
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+            var app = new Vue({
+                el: "#app",
+                data:{
+
+                    usuarios: [
+                        {nome: "Gabriel Souza"},
+                        {nome: "Lorem Amem"},
+                        {nome: "Ipsum Dominus"},
+                        {nome: "Thumder asas "}
+                    ]
+               
+                },
+                filters: {
+                    upper(str){
+                        console.log(str);
+                        return str.toUpperCase();
+                    },
+                    truncate(str, lenght){
+                        return str.substring(0, lenght);
+                    }
+                },
+                methods:{
+
+                    enviar(){
+                        alert("ENVIADO!")
+                    }
+
+                }
+            });
+    </script>
+
+</body>
+</html>

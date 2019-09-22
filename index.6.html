@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEU VUEJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body >
+
+    <div id="app" >
+
+<!-- 
+        <div>{{nome}}</div>
+        <div>{{toUpperCase}}</div> -->
+        <div>{{getNome}}</div>
+
+    </div>
+      
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+            var app = new Vue({
+                el: "#app",
+                data:{
+                    fullName: "",
+                   nome:"Gabriel Souza de Paula",
+                   lastName:"",
+               
+                },
+                computed:{ //Roda sempre que as dependencias tem alteração
+                    toUpperCase(){
+                        return this.nome.toUpperCase();
+                    },
+                    getNome(){
+                        return this.nome;
+                    }
+
+                },
+                watch:{ //Essa parada verifica se as variaveis sofreram alguma alteração, rodando se teve alteração
+                    //Assim vc consegue pegar o estado antigo e o novo
+                    nome(newValue, oldValue){
+                        this.fullName = newValue + " " + this.lastName;
+                    }
+                },
+                methods:{
+
+                    enviar(){
+                        alert("ENVIADO!")
+                    }
+
+                }
+            });
+    </script>
+
+</body>
+</html>

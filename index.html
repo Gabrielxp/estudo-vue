@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEU VUEJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+</head>
+<body>
+
+    <div id="app">
+        <!-- Usar o Vshow apenas quando quero apresentar algo na tela, 
+            o componente fica apenas oculto, o codigo aparece ainda no html -->
+        <h1 v-show="status" >
+            {{titulo}}
+        </h1>
+
+        <div v-if="usuario.id === 1">
+            <div>Id: {{usuario.id}}</div>
+            <div>Nome: {{usuario.nome}}</div>
+            <div>profissao: {{usuario.profissao}}</div>
+        </div>
+
+        <!-- Usar o V-if para remover um texto do html,
+             mesmo dando inspecionar nao e possivel ve-lo -->
+        <h3 v-if="texto" >Lorem, ipsum dolor sit
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, mollitia magnam voluptas illo quos tempora, magni voluptates excepturi dolorem perspiciatis tempore beatae laudantium blanditiis. Consequatur ad molestias voluptatibus natus, exercitationem necessitatibus, suscipit, deleniti porro minima earum magni! Labore ad minima, similique dolor porro velit error quas repellat dignissimos esse provident quis quaerat molestiae qui molestias atque placeat sed odit corporis! Ducimus voluptate iusto facere aperiam consequuntur, quaerat quis iure explicabo voluptas inventore maxime labore doloremque similique error placeat eos alias. Vel exercitationem rerum praesentium qui molestiae deleniti odio culpa nihil sapiente commodi ipsa sit excepturi, error, sed optio placeat, facilis vitae provident nesciunt laudantium quas. Recusandae ullam eligendi fuga laboriosam aspernatur incidunt ipsam iure! Ipsam dicta ad, consequatur blanditiis minus, quos reiciendis alias voluptate rem, error totam quis natus corrupti sequi incidunt at vel ratione necessitatibus nisi reprehenderit quod? Aliquid, ex? Vitae rem quia molestias explicabo deleniti neque quas! Quisquam itaque sed eligendi voluptatem maxime ratione voluptatum impedit quidem. Cum error, molestias nihil dignissimos assumenda cumque. Enim maiores, expedita excepturi molestias delectus adipisci neque dolor, corrupti ut perspiciatis modi velit. Dolores provident, magnam mollitia sint voluptas quis temporibus ex, delectus nemo nam eum fugit architecto fuga aperiam repellat. Magni cumque facilis delectus sint adipisci animi eveniet, quasi explicabo consectetur ipsum beatae eos voluptatem odit, porro, voluptate debitis in? Quis fugiat, dicta corrupti ab eveniet repellat suscipit voluptates, voluptatem explicabo harum impedit odit tempore delectus non eum assumenda blanditiis placeat dolorum numquam consequuntur quo facilis mollitia? Nam, quisquam illum necessitatibus voluptates iste, labore amet unde provident maiores nostrum aliquid ipsa itaque dolore delectus eveniet architecto earum quae obcaecati atque ea. Maxime odit, possimus deserunt, atque labore debitis, saepe magni laboriosam quo pariatur inventore quas natus sint veritatis corrupti? Ab sit tempora, nesciunt numquam dicta a, soluta porro ex excepturi, amet illo. Dolorem ratione earum soluta. Ab voluptatum saepe molestiae eaque. Rem alias error laboriosam assumenda laborum animi! Omnis impedit expedita, quis tempore dignissimos reprehenderit nesciunt nihil praesentium inventore labore a aliquid sequi nulla aut, sit provident accusamus natus facilis debitis reiciendis doloribus, magnam itaque nisi! Quasi, commodi. Molestias unde dignissimos aut nostrum quia provident incidunt, autem veritatis totam, ea praesentium consectetur necessitatibus repellendus? Distinctio maxime mollitia impedit excepturi commodi, quo dolores, ratione voluptatum vitae vero ad nihil facilis explicabo. Illo cum esse ducimus nostrum, pariatur omnis corrupti laboriosam itaque praesentium deserunt labore, magni a sequi dolorum aliquid architecto quos quae consequuntur fugit consectetur illum debitis quia ratione similique. Quos doloremque mollitia aut, cupiditate itaque nemo, consequuntur veniam, iusto repellat sequi quae qui dolorem aliquam perferendis rem expedita inventore sapiente sed odit veritatis at. Veniam est officiis deleniti ex, ab ratione, asperiores unde, earum perspiciatis exercitationem dolorem facilis explicabo fugiat rem? Facilis laudantium odio aut quasi, illo nihil similique harum esse temporibus non ut assumenda perspiciatis deserunt, quos necessitatibus doloribus modi autem recusandae amet voluptatem at magnam! Quo soluta tempore quibusdam sequi praesentium culpa, blanditiis inventore in. Totam, voluptate. Ipsa corrupti consequuntur, vitae incidunt totam animi aperiam neque enim sunt aliquam consequatur autem eveniet delectus? Dolor asperiores dolore voluptas veniam facilis mollitia sint deserunt iusto, quos non harum dicta natus perspiciatis repudiandae odio voluptatem provident reprehenderit incidunt voluptatum quia pariatur dolorem doloribus! Nobis excepturi est minus. Doloremque ab repellat illum distinctio, maxime sunt assumenda harum dolor laboriosam, atque cupiditate. Sunt deleniti placeat explicabo animi accusantium consectetur aspernatur temporibus inventore nobis quidem, iste veritatis unde reiciendis consequuntur voluptate eius voluptatibus atque? Rem voluptate temporibus inventore iste molestias eveniet vitae atque, molestiae quisquam provident maiores veritatis amet, ea adipisci asperiores a ut exercitationem nesciunt corrupti excepturi optio nisi, perferendis quod ipsam. Dignissimos qui sint dolorem et incidunt sequi, quis perspiciatis molestiae accusantium inventore, ex maiores! Vel id sapiente dicta porro quae maiores consequatur quisquam modi, neque exercitationem veritatis a nemo fugit ipsa consequuntur vitae eos placeat molestias deleniti! Asperiores debitis illum, modi harum optio, fugit, vel cupiditate quos et itaque aliquam libero minus perferendis amet ut ducimus hic sint delectus voluptatem? At corporis nihil repudiandae delectus dolores reprehenderit. Pariatur saepe culpa expedita vero. Distinctio inventore iure ipsum possimus aperiam. Exercitationem repellendus amet, corrupti quasi placeat eius numquam dolores ea eaque voluptatibus ducimus explicabo, cumque blanditiis accusamus accusantium vero velit? Vel, est aperiam. Adipisci eaque consequatur voluptate officia soluta deleniti a cum ipsa. Fuga minus ut delectus adipisci velit praesentium! Enim sint delectus aspernatur rerum corporis iste tenetur dignissimos, nihil voluptatum ex nam quas sunt omnis non pariatur eum, suscipit nobis repellendus mollitia illum reprehenderit eaque unde! Architecto velit culpa minus aspernatur debitis voluptatum sunt nulla earum! Repudiandae est odio iure aut tempore obcaecati exercitationem laborum, nemo, ratione aspernatur quia nostrum alias adipisci, pariatur omnis rem fuga? Sapiente quis excepturi, voluptate debitis consequuntur perspiciatis veritatis error neque odit porro incidunt praesentium et voluptatibus quam rem id beatae quasi quos fugiat sed inventore maxime molestiae? Deserunt numquam excepturi corrupti iure ab quae quaerat quisquam dolore ratione ad et voluptatum soluta asperiores ipsum hic maxime quidem, temporibus vero tempore voluptatem debitis itaque fugiat! Quaerat rem sapiente aut nam asperiores aspernatur quam iure nostrum molestias commodi nobis officia maxime quibusdam quidem totam ad voluptatibus, pariatur et illo, molestiae vero incidunt repudiandae! Dicta fugiat ipsam quo, odit rerum optio enim commodi animi facilis voluptate suscipit porro ea fugit ullam eos nihil doloremque at et rem! Nulla modi quam officia ab at delectus incidunt, exercitationem officiis quasi magni pariatur commodi! Assumenda porro repellat sit praesentium animi labore asperiores illum quam laboriosam, sed quae culpa nostrum nulla facilis corrupti quisquam sequi debitis! Nisi vero reprehenderit, est optio maxime itaque adipisci architecto quo porro nostrum minus corporis ratione consectetur molestias sed quam, excepturi fuga laudantium delectus eum rerum accusantium dignissimos voluptate eos. Eaque, hic. Pariatur ut sapiente unde, architecto modi expedita reprehenderit quasi. Possimus, quas! Soluta id deleniti veritatis iusto expedita! Id repellendus accusamus labore doloribus voluptate enim, aspernatur possimus. Sit exercitationem quidem illum atque dolores, ipsa aliquam? Voluptatibus eius ex vitae repudiandae, vel eum accusamus a ab nemo, earum provident quae beatae aliquam quibusdam soluta iusto non quisquam quo hic voluptates?
+            amet consectetur adipisicing elit. Veritatis officiis repudiandae quisquam optio sapiente ad impedit id in. Eos illum in quidem, vel quas voluptate voluptas dolor unde. Ut, est?
+        </h3>
+        <div v-else>SEM TEXTO</div>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+            var app = new Vue({
+                el: "#app",
+                data:{
+                    titulo:"Aula 1 Vuejs",
+                    status:true,
+                    texto:false,
+                    usuario: {
+                        id: 1,
+                        nome:"Gabriel Souza",
+                        profissao: "Dev"
+                    }
+                }
+            });
+    </script>
+
+</body>
+</html>
